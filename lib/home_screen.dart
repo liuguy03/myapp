@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:lib/auth_service.dart'; // 替换为你的路径
+import 'auth_service.dart'; // 替换为你的路径
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:developer' as developer;
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -21,7 +22,7 @@ class AuthService {
       await _markUserAsLoggedIn();
       return userCredential;
     } on FirebaseAuthException catch (e) {
-      print("注册失败: ${e.message}");
+      developer.log("注册失败: ${e.message}", name: 'auth_service', level: 900, error: e);
       return null;
     }
   }
@@ -37,7 +38,7 @@ class AuthService {
       await _markUserAsLoggedIn();
       return userCredential;
     } on FirebaseAuthException catch (e) {
-      print("登录失败: ${e.message}");
+      developer.log("登录失败: ${e.message}", name: 'auth_service', level: 900, error: e);
       return null;
     }
   }

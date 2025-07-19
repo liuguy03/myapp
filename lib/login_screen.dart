@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lib/auth_service.dart'; // 替换为你的路径
+import 'auth_service.dart'; // 替换为你的路径
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
