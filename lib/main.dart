@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart'; // 由 flutterfire configure 生成
+import 'package:home/user/myapp/lib/auth_gate.dart'; // 替换为你的路径
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
+// ... (保留顶部的 import 和 main 函数) ...
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Firebase App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const AuthGate(), // 将 AuthGate 设置为首页
+    );
+  }
+}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
